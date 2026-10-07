@@ -17,4 +17,7 @@ app.use((err, req, res, next) => {
 import authRoutes from "./routes/auth.js";
 app.use("/api/auth", authRoutes);
 
+import listingRoutes from "./routes/listings.js";
+app.use("/api/listings", listingRoutes);
+
 export default app;
