@@ -14,4 +14,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Something went wrong" });
 });
 
+import authRoutes from "./routes/auth.js";
+app.use("/api/auth", authRoutes);
+
 export default app;
