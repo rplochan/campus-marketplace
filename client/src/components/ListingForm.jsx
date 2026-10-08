@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CATEGORIES } from "../api";
+import LocationPicker from "./LocationPicker";
 
 const MAX_MB = 5;
 const TYPES = ["image/jpeg", "image/png", "image/webp"];
@@ -72,7 +73,7 @@ export default function ListingForm({ initial, onSubmit, submitLabel }) {
         {form.image_url && <img className="preview" src={form.image_url} alt="Preview" />}
         {errors.image_url && <span className="error">{errors.image_url}</span>}
       </label>
-      {/* LOCATION_HERE */}
+      {  <LocationPicker value={form.location_name} onChange={(loc) => setForm((f) => ({ ...f, ...loc }))} />}
       <button className="btn" disabled={busy || uploading}>{busy ? "Saving…" : submitLabel}</button>
     </form>
   );

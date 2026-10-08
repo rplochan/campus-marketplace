@@ -20,4 +20,7 @@ app.use("/api/auth", authRoutes);
 import listingRoutes from "./routes/listings.js";
 app.use("/api/listings", listingRoutes);
 
+import geocodeRoutes from "./routes/geocode.js";
+app.use("/api/geocode", geocodeRoutes);
+
 export default app;

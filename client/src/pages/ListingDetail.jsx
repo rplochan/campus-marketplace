@@ -4,6 +4,8 @@ import { api, formatPrice } from "../api";
 import { useAuth } from "../AuthContext";
 import ListingActions from "../components/ListingActions";
 import { ErrorState } from "../components/States";
+import ListingMap from "../components/ListingMap";
+
 
 export default function ListingDetail() {
   const { id } = useParams();
@@ -44,7 +46,7 @@ export default function ListingDetail() {
         ) : (
           <Link className="btn" to="/login" state={{ from: `/listings/${id}` }}>Log in to contact seller</Link>
         )}
-        {/* MAP_HERE */}
+        {listing.lat != null && <ListingMap lat={listing.lat} lng={listing.lng} name={listing.location_name} />}
       </div>
     </div>
   );
