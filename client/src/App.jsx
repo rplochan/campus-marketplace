@@ -5,6 +5,9 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import ListingDetail from "./pages/ListingDetail";
+import NewListing from "./pages/NewListing";
+import EditListing from "./pages/EditListing";
+import MyListings from "./pages/MyListings";
 
 export default function App() {
   return (
@@ -12,12 +15,14 @@ export default function App() {
       <Navbar />
       <main className="container">
         <Routes>
-          <Route path="/" element={<p>Home coming next</p>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/listings/new" element={<ProtectedRoute><NewListing /></ProtectedRoute>} />
+          <Route path="/listings/:id/edit" element={<ProtectedRoute><EditListing /></ProtectedRoute>} />
+          <Route path="/my-listings" element={<ProtectedRoute><MyListings /></ProtectedRoute>} />
+          <Route path="/listings/:id" element={<ListingDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<p className="center">Page not found</p>} />
-          <Route path="/" element={<Home />} />
-          <Route path="/listings/:id" element={<ListingDetail />} /> 
         </Routes>
       </main>
     </>
