@@ -23,4 +23,7 @@ app.use("/api/listings", listingRoutes);
 import geocodeRoutes from "./routes/geocode.js";
 app.use("/api/geocode", geocodeRoutes);
 
+import favoriteRoutes from "./routes/favorites.js";
+app.use("/api/favorites", favoriteRoutes);
+
 export default app;
